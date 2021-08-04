@@ -1,22 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap + CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="icon" href="assets/images/google_icon.png" />
-    <title>Google</title>
-  </head>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <body></body>
+  <!-- Bootstrap + CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300&display=swap"
+   rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/images/google_icon.png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>  
+  <script src="js/scripts.js"></script>
+
+  <title>Best contact-form/title</title>
+</head>
+
+<body>
+  <main>
+    <div class="form">
+      <div class="title">
+        <h1 id="title">Survey Form</h1>
+        <p class="text-center" id="description">
+          Thank you for taking the time to help us improve the platform
+        </p>
+      </div>
+      <form id="survey-form">
+        <label for="name" id="name-label" class="uno">First name</label>
+        <input type="text" id="name" placeholder="Enter your first name" requiered />
+
+        <label for="last-name" id="last-name-label" class="uno">Last name</label>
+        <input type="text" id="last-name" placeholder="Enter your last name" requiered />
+
+        <label for="email" id="email-label" class="uno">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" requiered />
+
+        <label for="dropdown" id="dropdown-label" class="uno">Gender</label>
+        <select id="dropdown" name="rol">
+          <option disable selected value>Select gender</option>
+          <option value="student">Male</option>
+          <option value="job">Female</option>
+        </select>
+
+        <label for="date" id="date-table" class="uno">Birth Date</label>
+        <div class="input-group date" data-provide="datepicker">
+          <input type="text" class="form-control">
+          <div class="input-group-addon">
+              <span class="glyphicon glyphicon-th"></span>
+          </div>
+        </div>
+
+        <label class="form-label text-center uno" id="input-image" for="customFile">Image profile</label>
+        <input type="file" class="form-control input-form" id="customFile" />
+
+        <p class="uno text-center">Any comments or suggestions?</p>
+        <textarea id="message" class="textarea uno" name="message" placeholder="Enter your message here..."></textarea>
+
+        <button type="submit" id="submit" class="submit uno btn btn-primary p-0 ">
+         Submit
+        </button>
+        <button type="button" id="table" class="mb-4 btn btn-info">
+        Check table
+        </button>
+      </form>
+    </div>
+  </main>
+</body>
+<script>
+   $('.datepicker').datepicker({
+    format: 'dd/mm/yyyy'
+ });
+</script>
 </html>
