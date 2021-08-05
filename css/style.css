@@ -97,3 +97,11 @@
     border-top-right-radius: 0.25rem; 
     border-bottom-right-radius: 0.25rem; 
 }
+
+.glyphicon img{
+  right: 0;
+  position: absolute;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+}

@@ -27,7 +27,7 @@
     <div class="form">
       <div class="title">
         <h1 id="title">Survey Form</h1>
-        <p class="text-center" id="description">
+        <p class="text-center mb-0s" id="description">
           Thank you for taking the time to help us improve the platform
         </p>
       </div>
@@ -49,18 +49,15 @@
         </select>
 
         <label for="date" id="date-table" class="uno">Birth Date</label>
-        <div class="input-group date" data-provide="datepicker">
+        <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
           <input type="text" class="form-control">
           <div class="input-group-addon">
-              <span class="glyphicon glyphicon-th"></span>
+              <span class="glyphicon glyphicon-th"><img class="pt-1" src="assets/images/calendar-icon.png"></span>
           </div>
         </div>
 
         <label class="form-label text-center uno" id="input-image" for="customFile">Image profile</label>
         <input type="file" class="form-control input-form" id="customFile" />
-
-        <p class="uno text-center">Any comments or suggestions?</p>
-        <textarea id="message" class="textarea uno" name="message" placeholder="Enter your message here..."></textarea>
 
         <button type="submit" id="submit" class="submit uno btn btn-primary p-0 ">
          Submit
@@ -74,7 +71,6 @@
 </body>
 <script>
    $('.datepicker').datepicker({
-    format: 'dd/mm/yyyy'
  });
 </script>
 </html>
