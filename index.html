@@ -1,122 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap + CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-  <!-- Bootstrap + CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300&display=swap"
-   rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>  
- 
+    <title>Best contact-form/title</title>
+  </head>
 
-  <title>Best contact-form/title</title>
-</head>
+  <body>
+    <main>
+      <div class="form">
+        <div class="title">
+          <h1 id="title">Survey Form</h1>
+          <p class="text-center mb-0s" id="description">
+            Thank you for taking the time to help us improve the platform
+          </p>
+        </div>
+        <form id="survey-form" role="form" onsubmit="signUp(event);">
+          <label for="name" id="name-label" class="uno">First name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your first name"
+            requiered
+          />
 
-<body>
-  <main>
-    <div class="form">
-      <div class="title">
-        <h1 id="title">Survey Form</h1>
-        <p class="text-center mb-0s" id="description">
-          Thank you for taking the time to help us improve the platform
-        </p>
-      </div>
-      <form id="survey-form">
-        <label for="name" id="name-label" class="uno">First name</label>
-        <input type="text" id="name" placeholder="Enter your first name" requiered />
+          <label for="last-name" id="last-name-label" class="uno"
+            >Last name</label
+          >
+          <input
+            type="text"
+            id="last-name"
+            placeholder="Enter your last name"
+            requiered
+          />
 
-        <label for="last-name" id="last-name-label" class="uno">Last name</label>
-        <input type="text" id="last-name" placeholder="Enter your last name" requiered />
+          <label for="email" id="email-label" class="uno">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            requiered
+          />
 
-        <label for="email" id="email-label" class="uno">Email</label>
-        <input type="email" id="email" placeholder="Enter your email" requiered />
+          <label for="dropdown" id="dropdown-label" class="uno">Gender</label>
+          <select id="dropdown" name="rol">
+            <option disable selected value>Select gender</option>
+            <option value="Male">Male</option>
+            <option value="female">Female</option>
+          </select>
 
-        <label for="dropdown" id="dropdown-label" class="uno">Gender</label>
-        <select id="dropdown" name="rol">
-          <option disable selected value>Select gender</option>
-          <option value="Male">Male</option>
-          <option value="female">Female</option>
-        </select>
-
-        <label for="date" id="date-table" class="uno">Birth Date</label>
-        <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
-          <input type="text" id="date" class="form-control">
-          <div class="input-group-addon">
-              <span class="glyphicon glyphicon-th"><img class="pt-1" src="assets/images/calendar-icon.png"></span>
+          <label for="date" id="date-table" class="uno">Birth Date</label>
+          <div
+            class="input-group date"
+            data-provide="datepicker"
+            data-date-format="dd/mm/yyyy"
+          >
+            <input type="text" id="date" class="form-control" />
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-th"
+                ><img class="pt-1" src="assets/images/calendar-icon.png"
+              /></span>
+            </div>
           </div>
-        </div>
 
-        <label class="form-label text-center uno" id="input-image" for="customFile">Image profile</label>
-        <input type="file" class="form-control input-form" id="customFile" />
+          <label
+            class="form-label text-center uno"
+            id="input-image"
+            for="customFile"
+            >Image profile</label
+          >
+          <input type="file" class="form-control input-form" id="customFile" />
 
-        <button type="button" id="submit" class="submit uno btn btn-primary p-0 ">
-         Submit
-        </button>
-        <button type="button" id="table" class="mb-4 btn btn-info">
-        Check table
-        </button>
-        <div id="lsOutput">
-
-        </div>
-      </form>
-    </div>
-  </main>
-</body>
-<script>
-  $('.datepicker').datepicker({
-});
-
-// INPUTS
-const firstName=document.getElementById("name");
-const lastName=document.getElementById("last-name");
-const inp_email=document.getElementById("email");
-const inp_gender=document.getElementById("dropdown");
-const date=document.getElementById("date");
-const image=document.getElementById("customFile");
-const submit=document.getElementById("submit");
-const lsOutput=document.getElementById("lsOutput");
-
-
-submit.onclick = function () {
-  const key = firstName.value;
-  const last_name= lastName.value;
-  const email = inp_email.value;
-  const gender=inp_gender.value;
-  // console.log(key);
-  // console.log(last_name);
-  // console.log(email);
-
- if(key && last_name && email && gender){
-    //  localStorage.setItem(key,last_name,email);
-     localStorage.setItem(key,last_name);
-     localStorage.setItem(email,gender);
-     location.reload();
- }
-};
-
-
-for (let i=0; i < localStorage.length; i++){
-  // x = localStorage.key(i);
-  // lsOutput.innerHTML += x;
-    // if(i==2){
-    //   document.getElementById("lsOutput").innerHTML += '<br>' ;
-    // }
-  const key=localStorage.key(i);
-  const last_name=localStorage.getItem(key);
-  const email=localStorage.getItem(last_name);
-  const gender=localStorage.getItem(email);
-  lsOutput.innerHTML += key +':'+ last_name + ':' + email + ':' + gender +'<br>';
-    }
-
-</script>
-<!-- <script src="js/scripts.js"></script> -->
+          <button
+            type="submit"
+            id="submit"
+            class="submit uno btn btn-primary p-0"
+          >
+            Submit
+          </button>
+          <button type="button" id="table" class="mb-4 btn btn-info">
+            Check table
+          </button>
+          <div id="output">
+            <table>
+              <thead>
+                <tr>
+                  <th>Picture</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Email</th>
+                  <th>Gender</th>
+                  <th>Birth date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- display data -->
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+  <script>
+    $(".datepicker").datepicker({});
+    const signUp = e => {
+            let formData = JSON.parse(localStorage.getItem('formData')) || [];
+                formData.push({
+                    fname: document.getElementById('name').value,
+                    lname: document.getElementById('last-name').value,
+                    email: document.getElementById('email').value,
+                    gender: document.getElementById('dropdown').value,
+                    date: document.getElementById('date').value,
+                    image: document.getElementById('customFile').value
+                });
+                localStorage.setItem('formData', JSON.stringify(formData));
+                console.log(localStorage.getItem('formData'));
+                dispData();  
+                e.preventDefault();
+        }
+        function dispData(){
+            console.log(localStorage.getItem('formData'));
+            if(localStorage.getItem('formData')){
+                var output = document.querySelector('tbody');
+                output.innerHTML = "";
+                JSON.parse(localStorage.getItem('formData')).forEach(data => {
+                    output.innerHTML += `
+                            <tr>
+                              <td> <img src="assets/images/${data.image}"> </td>
+                                <td>${data.fname}</td>
+                                <td>${data.lname}</td>
+                                <td>${data.email}</td>
+                                <td>${data.gender}</td>
+                                <td>${data.date}</td>
+                            </tr>
+                    `;
+                });                
+            }
+        }
+        dispData();
+        
+  </script>
+  <!-- <script src="js/scripts.js"></script> -->
 </html>
