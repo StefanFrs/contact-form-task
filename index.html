@@ -90,7 +90,12 @@
             for="customFile"
             >Image profile</label
           >
-          <input type="file" class="form-control input-form" id="customFile" />
+          <input
+            type="file"
+            class="form-control input-form"
+            id="customFile"
+            multiple
+          />
 
           <button
             type="submit"
@@ -99,11 +104,8 @@
           >
             Submit
           </button>
-          <button type="button" id="table" class="mb-4 btn btn-info">
-            Check table
-          </button>
           <div id="output">
-            <table>
+            <table id="tabel">
               <thead>
                 <tr>
                   <th>Picture</th>
@@ -112,6 +114,7 @@
                   <th>Email</th>
                   <th>Gender</th>
                   <th>Birth date</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -125,28 +128,28 @@
   </body>
   <script>
     $(".datepicker").datepicker({});
-    const signUp = e => {
-            let formData = JSON.parse(localStorage.getItem('formData')) || [];
-                formData.push({
-                    fname: document.getElementById('name').value,
-                    lname: document.getElementById('last-name').value,
-                    email: document.getElementById('email').value,
-                    gender: document.getElementById('dropdown').value,
-                    date: document.getElementById('date').value,
-                    image: document.getElementById('customFile').value
-                });
-                localStorage.setItem('formData', JSON.stringify(formData));
-                console.log(localStorage.getItem('formData'));
-                dispData();  
-                e.preventDefault();
-        }
-        function dispData(){
-            console.log(localStorage.getItem('formData'));
-            if(localStorage.getItem('formData')){
-                var output = document.querySelector('tbody');
-                output.innerHTML = "";
-                JSON.parse(localStorage.getItem('formData')).forEach(data => {
-                    output.innerHTML += `
+    const signUp = (e) => {
+      let formData = JSON.parse(localStorage.getItem("formData")) || [];
+      formData.push({
+        fname: document.getElementById("name").value,
+        lname: document.getElementById("last-name").value,
+        email: document.getElementById("email").value,
+        gender: document.getElementById("dropdown").value,
+        date: document.getElementById("date").value,
+        image: document.getElementById("customFile").value,
+      });
+      localStorage.setItem("formData", JSON.stringify(formData));
+      console.log(localStorage.getItem("formData"));
+      dispData();
+      e.preventDefault();
+    };
+    function dispData() {
+      console.log(localStorage.getItem("formData"));
+      if (localStorage.getItem("formData")) {
+        var output = document.querySelector("tbody");
+        output.innerHTML = "";
+        JSON.parse(localStorage.getItem("formData")).forEach((data) => {
+          output.innerHTML += `
                             <tr>
                               <td> <img src="assets/images/${data.image}"> </td>
                                 <td>${data.fname}</td>
@@ -154,13 +157,62 @@
                                 <td>${data.email}</td>
                                 <td>${data.gender}</td>
                                 <td>${data.date}</td>
+                                <td>  <button type="button" class="btn btn-danger" onclick="deleteRow(this)" />Delete </button></td>
                             </tr>
                     `;
-                });                
-            }
-        }
-        dispData();
-        
+        });
+      }
+    }
+    dispData();
+    function deleteRow(r) {
+      var i = r.parentNode.parentNode.rowIndex;
+      document.getElementById("tabel").deleteRow(i);
+    }
+
+    //incercare1
+    // function previewFiles() {
+    //   var preview = document.querySelector("#preview");
+    //   var files = document.querySelector("input[type=file]").files;
+
+    //   function readAndPreview(file) {
+    //     // Make sure `file.name` matches our extensions criteria
+    //     if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+    //       var reader = new FileReader();
+
+    //       reader.addEventListener(
+    //         "load",
+    //         function () {
+    //           var image = new Image();
+    //           image.height = 100;
+    //           image.title = file.name;
+    //           image.src = this.result;
+    //           preview.appendChild(image);
+    //         },
+    //         false
+    //       );
+
+    //       reader.readAsDataURL(file);
+    //     }
+    //   }
+
+    //   if (files) {
+    //     [].forEach.call(files, readAndPreview);
+    //   }
+    // }
+
+    //incercare2
+    // function convertImageToBase64(img) {
+    //   var canvas = document.createElement("canvas");
+    //   canvas.width = img.width;
+    //   canvas.height = img.height;
+
+    //   var ctx = canvas.getContext("2d");
+    //   ctx.drawImage(img, 0, 0);
+
+    //   var dataURL = canvas.toDataURL("assets/images");
+
+    //   return dataURL.replace(/^data:images\/(png|jpg);base64,/, "");
+    // }
   </script>
   <!-- <script src="js/scripts.js"></script> -->
 </html>
