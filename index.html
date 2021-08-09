@@ -31,81 +31,62 @@
     <main>
       <div class="form">
         <div class="title">
-          <h1 id="title">Survey Form</h1>
+          <h1 id="title">
+            Survey Form
+          </h1>
           <p class="text-center mb-0s" id="description">
             Thank you for taking the time to help us improve the platform
           </p>
         </div>
         <form id="survey-form" role="form" onsubmit="signUp(event);">
-          <label for="name" id="name-label" class="uno">First name</label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter your first name"
-            requiered
-          />
-
+            <!-- name -->
+          <label for="name" id="name-label" class="uno">
+            First name
+          </label>
+          <input type="text"id="name" placeholder="Enter your first name"requiered/>
+            <!-- last-name -->
           <label for="last-name" id="last-name-label" class="uno"
-            >Last name</label
-          >
+            >Last name
+            </label>
           <input
-            type="text"
-            id="last-name"
-            placeholder="Enter your last name"
-            requiered
-          />
-
-          <label for="email" id="email-label" class="uno">Email</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            requiered
-          />
-
-          <label for="dropdown" id="dropdown-label" class="uno">Gender</label>
+            type="text" id="last-name"placeholder="Enter your last name" requiered />
+            <!-- email -->
+          <label for="email" id="email-label" class="uno">
+            Email
+          </label>
+          <input type="email"id="email"placeholder="Enter your email" requiered/>
+            <!-- gender -->
+          <label for="dropdown" id="dropdown-label" class="uno">
+            Gender
+          </label>
           <select id="dropdown" name="rol">
             <option disable selected value>Select gender</option>
             <option value="Male">Male</option>
             <option value="female">Female</option>
           </select>
-
-          <label for="date" id="date-table" class="uno">Birth Date</label>
-          <div
-            class="input-group date"
-            data-provide="datepicker"
-            data-date-format="dd/mm/yyyy"
-          >
+              <!-- date -->
+          <label for="date" id="date-table" class="uno">
+            Birth Date
+          </label>
+          <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy" >
             <input type="text" id="date" class="form-control" />
             <div class="input-group-addon">
-              <span class="glyphicon glyphicon-th"
-                ><img class="pt-1" src="assets/images/calendar-icon.png"
-              /></span>
+              <span class="glyphicon glyphicon-th">
+                <img class="pt-1" src="assets/images/calendar-icon.png"/>
+              </span>
             </div>
           </div>
+              <!-- upload img -->
+          <label class="form-label text-center uno" id="input-image" for="customFile">
+             Image profile
+          </label>
+          <input type="file" class="form-control input-form" id="customFile" multiple/>
 
-          <label
-            class="form-label text-center uno"
-            id="input-image"
-            for="customFile"
-            >Image profile</label
-          >
-          <input
-            type="file"
-            class="form-control input-form"
-            id="customFile"
-            multiple
-          />
-
-          <button
-            type="submit"
-            id="submit"
-            class="submit uno btn btn-primary p-0"
-          >
+          <button type="submit" id="submit" class="submit uno btn btn-primary p-0">
             Submit
           </button>
           <div id="output">
-            <table id="tabel">
+            <table id="tabel" class="table">
               <thead>
                 <tr>
                   <th>Picture</th>
@@ -126,93 +107,5 @@
       </div>
     </main>
   </body>
-  <script>
-    $(".datepicker").datepicker({});
-    const signUp = (e) => {
-      let formData = JSON.parse(localStorage.getItem("formData")) || [];
-      formData.push({
-        fname: document.getElementById("name").value,
-        lname: document.getElementById("last-name").value,
-        email: document.getElementById("email").value,
-        gender: document.getElementById("dropdown").value,
-        date: document.getElementById("date").value,
-        image: document.getElementById("customFile").value,
-      });
-      localStorage.setItem("formData", JSON.stringify(formData));
-      console.log(localStorage.getItem("formData"));
-      dispData();
-      e.preventDefault();
-    };
-    function dispData() {
-      console.log(localStorage.getItem("formData"));
-      if (localStorage.getItem("formData")) {
-        var output = document.querySelector("tbody");
-        output.innerHTML = "";
-        JSON.parse(localStorage.getItem("formData")).forEach((data) => {
-          output.innerHTML += `
-                            <tr>
-                              <td> <img src="assets/images/${data.image}"> </td>
-                                <td>${data.fname}</td>
-                                <td>${data.lname}</td>
-                                <td>${data.email}</td>
-                                <td>${data.gender}</td>
-                                <td>${data.date}</td>
-                                <td>  <button type="button" class="btn btn-danger" onclick="deleteRow(this)" />Delete </button></td>
-                            </tr>
-                    `;
-        });
-      }
-    }
-    dispData();
-    function deleteRow(r) {
-      var i = r.parentNode.parentNode.rowIndex;
-      document.getElementById("tabel").deleteRow(i);
-    }
-
-    //incercare1
-    // function previewFiles() {
-    //   var preview = document.querySelector("#preview");
-    //   var files = document.querySelector("input[type=file]").files;
-
-    //   function readAndPreview(file) {
-    //     // Make sure `file.name` matches our extensions criteria
-    //     if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
-    //       var reader = new FileReader();
-
-    //       reader.addEventListener(
-    //         "load",
-    //         function () {
-    //           var image = new Image();
-    //           image.height = 100;
-    //           image.title = file.name;
-    //           image.src = this.result;
-    //           preview.appendChild(image);
-    //         },
-    //         false
-    //       );
-
-    //       reader.readAsDataURL(file);
-    //     }
-    //   }
-
-    //   if (files) {
-    //     [].forEach.call(files, readAndPreview);
-    //   }
-    // }
-
-    //incercare2
-    // function convertImageToBase64(img) {
-    //   var canvas = document.createElement("canvas");
-    //   canvas.width = img.width;
-    //   canvas.height = img.height;
-
-    //   var ctx = canvas.getContext("2d");
-    //   ctx.drawImage(img, 0, 0);
-
-    //   var dataURL = canvas.toDataURL("assets/images");
-
-    //   return dataURL.replace(/^data:images\/(png|jpg);base64,/, "");
-    // }
-  </script>
-  <!-- <script src="js/scripts.js"></script> -->
+  <script src="js/scripts.js"></script>
 </html>

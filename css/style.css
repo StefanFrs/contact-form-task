@@ -16,11 +16,17 @@
   .form{
     background: linear-gradient( 115deg, rgba(0, 25, 82, 0.8), rgba(32, 4, 64, 0.7));
     margin: 0 auto;
-    width: 40%;
+    width: 50%;
   }
   @media only screen and (max-width: 1200px) {
     .form {
       width: 80%;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    .form {
+      background: none;
     }
   }
 
@@ -116,4 +122,14 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  color: white;
+}
+#tabel img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+#output{
+  overflow-x: auto;
 }
