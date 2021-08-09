@@ -1,5 +1,6 @@
 
  $(".datepicker").datepicker({});
+ 
  const signUp = (e) => {
    let formData = JSON.parse(localStorage.getItem("formData")) || [];
    formData.push({
