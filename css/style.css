@@ -133,3 +133,10 @@ table {
 #output{
   overflow-x: auto;
 }
+.alert{
+  background: #79c879;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  
+}

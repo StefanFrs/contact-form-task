@@ -38,7 +38,8 @@
             Thank you for taking the time to help us improve the platform
           </p>
         </div>
-        <form id="survey-form" role="form" onsubmit="signUp(event);">
+        <div class="alert">Your message has been sent</div>
+        <form id="survey-form" role="form" ;>
             <!-- name -->
           <label for="name" id="name-label" class="uno">
             First name
@@ -59,7 +60,7 @@
           <label for="dropdown" id="dropdown-label" class="uno">
             Gender
           </label>
-          <select id="dropdown" name="rol">
+          <select id="dropdown" name="dropdown">
             <option disable selected value>Select gender</option>
             <option value="Male">Male</option>
             <option value="female">Female</option>
@@ -69,7 +70,7 @@
             Birth Date
           </label>
           <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy" >
-            <input type="text" id="date" class="form-control" />
+            <input type="text" id="date" name="date" class="form-control" />
             <div class="input-group-addon">
               <span class="glyphicon glyphicon-th">
                 <img class="pt-1" src="assets/images/calendar-icon.png"/>
@@ -89,6 +90,7 @@
             <table id="tabel" class="table">
               <thead>
                 <tr>
+                  <th>User nr</th>
                   <th>Picture</th>
                   <th>Firstname</th>
                   <th>Lastname</th>
@@ -98,7 +100,7 @@
                   <th>Delete</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="tbody-test">
                 <!-- display data -->
               </tbody>
             </table>
@@ -107,5 +109,12 @@
       </div>
     </main>
   </body>
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script> 
   <script src="js/scripts.js"></script>
 </html>
