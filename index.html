@@ -38,29 +38,29 @@
             Thank you for taking the time to help us improve the platform
           </p>
         </div>
-        <div class="alert">Your message has been sent</div>
-        <form id="survey-form" role="form" ;>
+       
+        <form id="survey-form" role="form" onsubmit="return validateForm()" ;>
             <!-- name -->
           <label for="name" id="name-label" class="uno">
             First name
           </label>
-          <input type="text"id="name" placeholder="Enter your first name"requiered/>
+          <input type="text"id="name" placeholder="Enter your first name" required/>
             <!-- last-name -->
           <label for="last-name" id="last-name-label" class="uno"
             >Last name
             </label>
           <input
-            type="text" id="last-name"placeholder="Enter your last name" requiered />
+            type="text" id="last-name"placeholder="Enter your last name" required />
             <!-- email -->
           <label for="email" id="email-label" class="uno">
             Email
           </label>
-          <input type="email"id="email"placeholder="Enter your email" requiered/>
+          <input type="email"id="email"placeholder="Enter your email" required/>
             <!-- gender -->
           <label for="dropdown" id="dropdown-label" class="uno">
             Gender
           </label>
-          <select id="dropdown" name="dropdown">
+          <select id="dropdown" name="dropdown" required>
             <option disable selected value>Select gender</option>
             <option value="Male">Male</option>
             <option value="female">Female</option>
@@ -70,7 +70,7 @@
             Birth Date
           </label>
           <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy" >
-            <input type="text" id="date" name="date" class="form-control" />
+            <input type="text" id="date" name="date" class="form-control" required />
             <div class="input-group-addon">
               <span class="glyphicon glyphicon-th">
                 <img class="pt-1" src="assets/images/calendar-icon.png"/>
