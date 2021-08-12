@@ -32,10 +32,10 @@
       <div class="form">
         <div class="title">
           <h1 id="title">
-            Survey Form
+            Employee Form
           </h1>
           <p class="text-center mb-0s" id="description">
-            Thank you for taking the time to help us improve the platform
+           Registration form for all employees
           </p>
         </div>
        
@@ -63,7 +63,7 @@
           <select id="dropdown" name="dropdown" required>
             <option disable selected value>Select gender</option>
             <option value="Male">Male</option>
-            <option value="female">Female</option>
+            <option value="Female">Female</option>
           </select>
               <!-- date -->
           <label for="date" id="date-table" class="uno">
@@ -86,16 +86,17 @@
           <button type="submit" id="submit" class="submit uno btn btn-primary p-0">
             Submit
           </button>
+          <input type="text" id="myInput" onkeyup="search_function()" placeholder="Search for names.." title="Type in a name">
           <div id="output" class="tabel-info">
-            <table id="tabel" class="table">
+            <table id="tabel" class="table table-users">
               <thead>
                 <tr>
-                  <th>User nr</th>
+                  <th >User nr</th>
                   <th>Picture</th>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Email</th>
-                  <th>Gender</th>
+                  <th class="filter-style">Firstname</th>
+                  <th class="filter-style"> Lastname</th>
+                  <th class="filter-style">Email</th>
+                  <th class="filter-style">Gender</th>
                   <th>Birth date</th>
                   <th>Delete</th>
                 </tr>

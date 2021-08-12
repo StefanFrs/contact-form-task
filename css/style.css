@@ -140,3 +140,40 @@ table {
   color: white;
   
 }
+
+#myInput {
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  border-radius: 5px;
+}
+
+#tabel td{
+  text-align: center; 
+  vertical-align: middle;
+}
+.table-users th{
+  cursor:pointer;
+}
+
+.table-users .th-sort-asc::after {
+  content: "\25b4";
+}
+
+.table-users .th-sort-desc::after {
+  content: "\25be";
+}
+
+.table-users .th-sort-asc::after,
+.table-users .th-sort-desc::after {
+  margin-left: 5px;
+}
+
+.table-users .th-sort-asc,
+.table-users .th-sort-desc {
+  background: rgba(0, 0, 0, 0.1);
+}
