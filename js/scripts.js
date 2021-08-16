@@ -83,6 +83,7 @@ function deleteRow(r, id) {
   const dbRef = firebase.database().ref();
   const userRef = dbRef.child("messages/" + id);
   userRef.remove();
+  alert("User deleted!");
 }
 
 //format image to base64 string
@@ -274,3 +275,6 @@ document.querySelectorAll(".table-users th").forEach(headerCell => {
       sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
   });
 });
+
+
+//pagination for table

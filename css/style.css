@@ -16,7 +16,7 @@
   .form{
     background: linear-gradient( 115deg, rgba(0, 25, 82, 0.8), rgba(32, 4, 64, 0.7));
     margin: 0 auto;
-    width: 50%;
+    width: 80%;
   }
   @media only screen and (max-width: 1200px) {
     .form {
@@ -72,7 +72,7 @@
     padding: 10px;
   }
   #name, #email, #number, #dropdown, #submit, #table,#last-name,#date,#input-image{
-    width: 80%;
+    width: 60%;
     height: 40px;
     font-size: 1rem;
     border: transparent;
@@ -82,7 +82,7 @@
   }
  
   #message{
-    width: 80%;
+    width: 60%;
     height: 100px;
     font-size: 1rem;
     border: transparent;
@@ -144,7 +144,7 @@ table {
 #myInput {
   background-position: 10px 10px;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 60%;
   font-size: 16px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
@@ -176,4 +176,14 @@ table {
 .table-users .th-sort-asc,
 .table-users .th-sort-desc {
   background: rgba(0, 0, 0, 0.1);
+}
+.input-group{
+  width: 60%;
+}
+
+.form-control{
+  width: 60%;
+}
+#tabel th{
+  text-align: center;
 }
